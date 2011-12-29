@@ -1,0 +1,38 @@
+(08/07/2011)
+- IE7 Dropdown Menu: Fix for dissapeering menu over images.
+- Long Titles Menu: Fix for menu with longer titles.
+- Blog Section: Adjustment for (You're in all Blogs Section).
+- Modernizr: Update from v1.7 to v2.0.6.
+- Child Theme: Shell Child Theme style.css correction.
+
+(09/10/2011)
+For more control over Child Themes we decided to add unique IDs to:
+
+- archive.php #content-archive
+- blog.php #content-blog
+- images.php: #content-images
+
+These changes should not affect your Theme in any way because the grid class
+still remains the same and they will change only if you add styles to them.
+
+- shell-child-theme.zip: is now removed because the it was not needed. You
+still have regular non-zip Child Theme sample included.
+- blog-excerpt.php Template was added for user who does not want full posts.
+blog-excerpt will shorten your post and include "See more" link. And if you
+still want full posts simply use blog.php Template instead.
+- PHP headings filesource had wp-content/shell instead of wp-content/shell-lite.
+This does not affect nor changes anything, it's just to avoid confusion.
+- Post Data CSS margin-top:20px was added.
+- Author Meta (Author's Box) was added. The meta will display once you enter
+your Biographical Info, otherwise it will not display.
+- Textdomain bugs in comments.php, footer.php and functions.php
+- Modernizr version bug fixed.
+
+(09/18/2011)
+- Shell is now translation-ready, please see /shell-lite/languages/ folder.
+You can use Codestyling Localization Plugin and start translating Shell
+into your own language: http://wordpress.org/extend/plugins/codestyling-localization/
+
+- Bug fix in functions.php
+require_once ( get_template_directory() . '/includes/hooks.php' ); was not needed
+because we're calling hooks directly from /includes/functions.php

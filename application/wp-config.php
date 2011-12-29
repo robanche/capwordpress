@@ -14,18 +14,39 @@
  * @package WordPress
  */
 
-// ** MySQL settings - You can get this info from your web host ** //
-/** The name of the database for WordPress */
-define('DB_NAME', 'capwordpress');
 
-/** MySQL database username */
-define('DB_USER', 'capwordpress');
+if ( file_exists( dirname( __FILE__ ) . '/../env_local' ) ) {
 
-/** MySQL database password */
-define('DB_PASSWORD', 'sbear99');
+    	// Local Environment
+    	define('WP_ENV', 'local');
+    	define('WP_DEBUG', true);
 
-/** MySQL hostname */
-define('DB_HOST', 'localhost');
+    	define('DB_NAME', 'capwordpress');
+    	define('DB_USER', 'capwordpress');
+    	define('DB_PASSWORD', 'sbear99');
+    	define('DB_HOST', 'localhost');
+
+} elseif ( file_exists( dirname( __FILE__ ) . '/../env_playground' ) ) {
+	// Playground Environment
+	define('WP_ENV', 'playground');
+	define('WP_DEBUG', true);
+
+	define('DB_NAME', 'capwordpress');
+	define('DB_USER', 'capwordpress');
+	define('DB_PASSWORD', 'sbear99');
+	define('DB_HOST', 'localhost');
+} else {
+
+	// Production Environment
+	define('WP_ENV', 'production');
+	define('WP_DEBUG', false);
+
+	define('DB_NAME', 'capwordpress');
+	define('DB_USER', 'capwordpress');
+	define('DB_PASSWORD', 'sbear99');
+	define('DB_HOST', 'localhost');
+}
+
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
@@ -70,15 +91,6 @@ $table_prefix  = 'wp_';
  * language support.
  */
 define('WPLANG', '');
-
-/**
- * For developers: WordPress debugging mode.
- *
- * Change this to true to enable the display of notices during development.
- * It is strongly recommended that plugin and theme developers use WP_DEBUG
- * in their development environments.
- */
-define('WP_DEBUG', false);
 
 /* That's all, stop editing! Happy blogging. */
 

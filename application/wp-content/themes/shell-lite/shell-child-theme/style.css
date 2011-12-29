@@ -1,0 +1,12 @@
+/*   
+    Theme Name: Shell-Lite Child
+    Theme URI: http: //themeid.com/shell-lite
+    Description: Child theme for the Shell-Lite theme 
+    Author: Emil Uzelac
+    Author URI: http://themeid.com
+    Template: shell-lite
+    Version:1.0
+*/
+
+/* Import shell styles */
+   @import url('../shell-lite/style.css'); 
